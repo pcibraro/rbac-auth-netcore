@@ -34,7 +34,7 @@ Under User & Roles, click on **Create Role** to define a new Role for our API.
 
 ![alt](./images/2-roles.png)
 
-On the **Settings* tab, enter **meteorologist* as role name and description.
+On the **Settings** tab, enter **meteorologist* as role name and description.
 
 On the **Permissions** tab, click on **Add Permissions**, select our  **Weather Forecast API* from the dropdown, and **read-weather** as permission. Click on **Add Permissions*
 
