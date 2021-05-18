@@ -1,0 +1,25 @@
+﻿@model System.Collections.Generic.IEnumerable<Client.Models.WeatherForecast>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<table class="table">
+    <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Temperature C</th>
+        <th scope="col">Temperature F</th>
+        <th scope="col">Summary</th>
+    </tr>
+    @foreach (WeatherForecast wf in Model)
+    {
+        <tr>
+            <td>@wf.Date.ToShortDateString()</td>
+            <td>@wf.TemperatureC</td>
+            <td>@wf.TemperatureF</td>
+            <td>@wf.Summary</td>
+        </tr>
+    }
+</table>
+
+
