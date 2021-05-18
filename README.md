@@ -41,7 +41,7 @@ On the **Permissions** tab, click on **Add Permissions**, select our  **Weather 
 ## Assign the role to existing users
 
 As final step for the API configuration in Auth0, we need to assign the **meteorologist** role to any of the users you will be using for testing the API. If you do not have one yet, you will have to create it and assign it to this role.
-Roles are assigned by clicking on the ellipsis button **...** available on each user in the list, and selecting **Assign Roles** option from the displayed menu.
+Roles are assigned by clicking on the ellipsis button **"..."** available on each user in the list, and selecting **Assign Roles** option from the displayed menu.
 
 ## Anatomy of the JWT access token
 
