@@ -2,9 +2,9 @@
 
 Auth0 offers two alternatives for implementing authorization in an API, scopes and roles.
 
-Scopes represent access levels that an API exposes and users can grant to client applications on his/her behalf. For example, "read emails" or "write calendar", which gives a client application permissions to read the user's emails o write the calendar. 
+Scopes represent access levels exposed by an API that users can grant to client applications on his/her behalf. For example, "read emails" or "write calendar", which gives a client application permissions to read the user's emails o write the calendar. 
 
-On other hand, roles represent the old school for doing authorization. Users are assigned to roles that represent one or more permissions. Those permissions are passed to the API when the user invokes it through a client application. In Auth0, roles are configured through a feature called [Role Based Access Control] (https://auth0.com/docs/authorization/rbac/) or RBAC in short.
+On other hand, roles represent the old school for doing authorization. Users are assigned to roles with one or more permissions. Those permissions are passed to the API when the user invokes it through a client application. In Auth0, roles are configured through a feature called [Role Based Access Control](https://auth0.com/docs/authorization/rbac/) or RBAC in short.
 
 It is worth mentioning that only scopes are mentioned as part of the OAuth 2.0 specification, and roles are usually implemented in proprietary ways by different vendors. As Auth0 uses JWT for representing access tokens, it relies on extension attributes for injecting the permissions for a role into the tokens. We will cover this more in detail later in this post.
 
