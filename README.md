@@ -45,7 +45,7 @@ Roles are assigned by clicking on the ellipsis button **"..."** available on eac
 
 ## Anatomy of the JWT access token
 
-If everything is configured correctly, any access token issued by Auth0 for our API should look like the one below,
+If everything is configured correctly, any access token issued by Auth0 for our API should look like the one below when you authenticate with any user in the **meteorologist** role,
 
 ```json
 {
@@ -61,6 +61,8 @@ If everything is configured correctly, any access token issued by Auth0 for our 
   ]
 }
 ```
+
+> Scopes are not required when requesting an access token for an API configured with RBAC. Only the audience must be passed to Auth0, which is https://weatherforecast in our sample.
 
 ## Create the ASP.NET Core API in Visual Studio
 
