@@ -20,7 +20,7 @@ Go the APIs and click on Create API
 
 Under the settings tab, configure the following fields.
 
-* **Name**, a friendly name or description for the API. Enter **Weather Forecast API* for this sample.
+* **Name**, a friendly name or description for the API. Enter **Weather Forecast API** for this sample.
 * **Identifier** or **Audience**, which is a identifier that client application uses to request access tokens for the API. Enter **https://weatherforecast**.
 * Under RBAC settings, enable **RBAC** and **Add Permissions in the Access Tokens**. This will be used by Auth0 to inject the user's permissions into the access tokens.
 
@@ -34,7 +34,7 @@ Under User & Roles, click on **Create Role** to define a new Role for our API.
 
 ![alt](./images/2-roles.png)
 
-On the **Settings** tab, enter **meteorologist* as role name and description.
+On the **Settings** tab, enter **meteorologist** as role name and description.
 
 On the **Permissions** tab, click on **Add Permissions**, select our  **Weather Forecast API* from the dropdown, and **read-weather** as permission. Click on **Add Permissions*
 
@@ -170,14 +170,17 @@ Create a new appSettings.json file and include the settings we got from the Auth
 ```
 
 ### Require authentication in other controllers
-The WeatherForecast controller included in the template allows anonymous calls. We will convert it to require authenticated calls. Fortunately, that is as simple as adding a top level [Authorize] attribute in the class definition. That attribute will also reference the policy we previously defined in the Startup.cs file.
+The WeatherForecast controller included in the template allows anonymous calls. We will convert it to require authenticated calls. Fortunately, that is as simple as adding a top level [Authorize] attribute in the method definition. That attribute will also reference the policy we previously defined in the Startup.cs file.
 
 ```csharp
 [ApiController]
-[Authorize("read-weather")]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
+  [HttpGet]
+  [Authorize("read-weather")]
+  public IEnumerable<WeatherForecast> Get()
+  {
 ```
 
 This attribute will do two things,
@@ -189,5 +192,4 @@ Once we ran this project in Visual Studio, the API will only accept authenticate
 
 ## Summary
 
-We discussed two of the authorization alternatives available for you in Auth0 when implementing an API in .NET core, and selected **RBAC** for our sample. We also showed how to configure the ASP.NET Core Middleware for Authentication and Authorization, and how to use Authorization Policies for checking permissions on the JWT bearer tokens. 
-In a next post, we will see how to implement a client application that negotiates access tokens from Auth0 to consume this API.
+We discussed two of the authorization alternatives available for you in Auth0 when implementing an API in .NET core, and selected **RBAC** for our sample. We also showed how to configure the ASP.NET Core Middleware for Authentication and Authorization, and how to use Authorization Policies for checking permissions on the JWT bearer tokens.

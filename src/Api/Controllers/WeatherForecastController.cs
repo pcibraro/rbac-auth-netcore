@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 namespace Api.Controllers
 {
     [ApiController]
-    [Authorize("read-weather")]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
@@ -26,6 +25,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Authorize("read-weather")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
